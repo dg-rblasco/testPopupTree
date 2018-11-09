@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    You know that {{ title }} rules!
+  </h1>
+</div>
+<router-outlet></router-outlet>
+<h2> ¡Descubre nuestros  chimichanga! </h2>
+<input id="{{target}}" #input (focus)="toggleWithShadingOptions(input)" [value]="checkvalues">
+<dx-popover
+        target="#{{target}}"
+        position="bottom"
+        [width]="300"
+        [shading]="true"
+        shadingColor="rgba(0, 0, 0, 0.5)"
+        [(visible)]="withShadingOptionsVisible">
+  <div>
+    <p>{{ title }}</p>
+    <label *ngFor="let checkbox of array1deCheckbox">
+      <input type="checkbox" value="{{checkbox.id}}" (change)="completeInput(checkbox)"> {{checkbox.texto}} <br>
+    </label>
+  </div>
+</dx-popover>
